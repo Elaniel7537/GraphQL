@@ -4,10 +4,9 @@ import Head from "next/head";
 import { Layout } from "antd";
 // components
 import Menu from "@layouts/sider/menu.jsx";
-// styles
+
 import "@styles/antd.less";
 
-// const globales
 const { Header, Content, Sider, Footer } = Layout;
 
 const MyApp = ({ Component, pageProps }) => {
