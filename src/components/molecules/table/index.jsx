@@ -5,12 +5,18 @@ import { Table, Divider, Typography } from "antd";
 const { Title } = Typography;
 
 const listTable = (props) => {
-  const { columns, title, dataSource } = props;
+  const { columns, title, dataSource, loading } = props;
   return (
     <>
       <Title level={3}>{title}</Title>
       <Divider />
-      <Table columns={columns} dataSource={dataSource} />
+      <Table
+        rowKey="id" 
+        loading={loading}
+        columns={columns}
+        dataSource={dataSource}
+        pagination={{defaultPageSize: "8"}}
+      />
     </>
   );
 };

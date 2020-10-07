@@ -5,8 +5,6 @@ import Link from "next/link";
 import { Menu } from "antd";
 import { TeamOutlined, PictureOutlined } from "@ant-design/icons";
 
-import "@styles/layouts/menu.less";
-
 const siderMenu = () => {
   const Router = useRouter();
   return (

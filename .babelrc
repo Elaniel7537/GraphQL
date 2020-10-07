@@ -6,10 +6,11 @@
       {
         "cwd": "babelrc",
         "root": ["./src"],
-        "extensions": [".js"],
+        "extensions": [".js", ".jsx", ".tsx"],
         "alias": {
           "@": "./src/*",
           "@styles": "./styles",
+          "@graphQl": "./src/graphql",
           "@components": "./src/components",
           "@layouts": "./src/components/layouts",
           "@atoms": "./src/components/atoms",
