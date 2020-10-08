@@ -1,7 +1,7 @@
 AHORA SE TIENE
 
 .- Manejo de buenas practicas con Atomic Design.  
-.- Conexion con Apollo Client - GraphQL (Dejo como observación que no había trabajado con estas coexciones antes, es buena la experiencia.).  
+.- Conexion con Apollo Client - GraphQL (Dejo como observación que no había trabajado con estas conexiones antes, es buena la experiencia.).  
 .- Listar Usuarios - GraphQL.  
 .- Listar Posts de un usuario seleccionado.  
 .- Webpack Less, escalable por modulos, buenas practicas como flexbox.  
@@ -12,9 +12,12 @@ OBSERBACIONES <br/>
 Tengo una consulta con respecto al listar los post, tiene que ver algo con la cache que maneja las conexiones con Apollo Cliente, que al consultar una segunda vez esta no se dispara. <br/>
 
 QUEDA PENDIENTE <br/>
+Error de consulta de post de un usuario. <br/>
 Actualizar un usuario. <br/>
+Utilizar TEST. <br/>
 
 EXTRA <br/>
+Implementar Mobx. <br/>
 Listar Albunes y traer imagenes <br/>
 
 Comandos de ejecución: <br/>
