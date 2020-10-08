@@ -7,7 +7,7 @@ const path = require("path");
 
 // Globalizar los estilos empaquetados
 const themeVariables = lessToJS(
-  fs.readFileSync(path.resolve(__dirname, "./styles/antd-custom.less"), "utf8")
+  fs.readFileSync(path.resolve(__dirname, "./styles/_styles.less"), "utf8")
 );
 
 // para las variables de desarrollo
@@ -36,7 +36,6 @@ module.exports = withCSS({
   cssLoaderOptions: {
     importLoaders: 1,
     modifyVars: themeVariables,
-
     localIdentName: "[local]___[hash:base64:5]",
   },
   ...withLess(

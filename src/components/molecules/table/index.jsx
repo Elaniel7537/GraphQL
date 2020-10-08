@@ -11,11 +11,11 @@ const listTable = (props) => {
       <Title level={3}>{title}</Title>
       <Divider />
       <Table
-        rowKey="id" 
+        size="small"
+        rowKey="id"
         loading={loading}
         columns={columns}
         dataSource={dataSource}
-        pagination={{defaultPageSize: "8"}}
       />
     </>
   );

@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
+import Link from "next/link";
 // antd
-import { Tag, Space, Col, Row } from "antd";
+import { Tag, Space, Col, Row, Tooltip, Button } from "antd";
+import { AppstoreAddOutlined } from "@ant-design/icons";
 // components
 import TableUsers from "@components/molecules/table";
+// graphQL
 import { GET_USERS } from "@graphQl/users.jsx";
 
 const Home = () => {
@@ -35,28 +38,34 @@ const Home = () => {
       key: "action",
       render: (text, record) => (
         <Space size="middle">
-          <a>Editar</a>
-          <a>Borrar</a>
+          <Link href={`/users/${record.id}`}>
+            <Tooltip title="VER POSTS">
+              <Button
+                type="dashed"
+                shape="circle"
+                icon={<AppstoreAddOutlined />}
+              />
+            </Tooltip>
+          </Link>
         </Space>
       ),
     },
   ];
+  const [userId, setUsesId] = useState(null);
 
   const { loading, data } = useQuery(GET_USERS);
-  
+
   return (
-    <div className="home-contend">
-      <Row gutter={16} className="site-card-wrapper">
-        <Col span={24}>
-          <TableUsers
-            columns={columns}
-            dataSource={!loading ? data.users.data : []}
-            loading={loading}
-            title="Lista de Usuarios"
-          />
-        </Col>
-      </Row>
-    </div>
+    <Row gutter={[16, 16]} className="home-contend">
+      <Col span={24}>
+        <TableUsers
+          columns={columns}
+          dataSource={!loading ? data.users.data : []}
+          loading={loading}
+          title="Lista de Usuarios"
+        />
+      </Col>
+    </Row>
   );
 };
 

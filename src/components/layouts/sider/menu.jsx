@@ -16,11 +16,11 @@ const siderMenu = () => {
             <a>Lista de Usuarios</a>
           </Link>
         </Menu.Item>
-        <Menu.Item key="/albums" icon={<PictureOutlined />}>
+        {/* <Menu.Item key="/albums" icon={<PictureOutlined />}>
           <Link href="/albums">
             <a>Lista de Albunes</a>
           </Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     </>
   );
