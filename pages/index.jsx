@@ -1,70 +1,36 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import Link from "next/link";
 // antd
-import { Tag, Space, Col, Row, Tooltip, Button } from "antd";
-import { AppstoreAddOutlined } from "@ant-design/icons";
+import { Col, Row, Typography, Divider, Button } from "antd";
 // components
-import TableUsers from "@components/molecules/table";
-// graphQL
-import { GET_USERS } from "@graphQl/users.jsx";
+import CardListComponent from "@molecules/card";
+
+const { Title, Text } = Typography;
 
 const Home = () => {
-  // informacion para la tabla
-  const columns = [
+  const [list] = useState([
     {
-      title: "Nombre",
-      dataIndex: "name",
-      key: "name",
-      render: (text) => <a>{text}</a>,
+      key: "1",
+      title: "Listar Usuarios",
+      cover:
+        "https://st2.depositphotos.com/1003434/10630/i/450/depositphotos_106304994-stock-photo-little-girl-outdoors.jpg",
+      path: "/users",
     },
-    {
-      title: "Usuario",
-      dataIndex: "username",
-      key: "username",
-    },
-    {
-      title: "Correo",
-      dataIndex: "email",
-      key: "email",
-    },
-    {
-      title: "Télefono",
-      key: "phone",
-      dataIndex: "phone",
-    },
-    {
-      title: "Acciones",
-      key: "action",
-      render: (text, record) => (
-        <Space size="middle">
-          <Link href={`/users/${record.id}`}>
-            <Tooltip title="VER POSTS">
-              <Button
-                type="dashed"
-                shape="circle"
-                icon={<AppstoreAddOutlined />}
-              />
-            </Tooltip>
-          </Link>
-        </Space>
-      ),
-    },
-  ];
-  const [userId, setUsesId] = useState(null);
-
-  const { loading, data } = useQuery(GET_USERS);
+  ]);
 
   return (
     <Row gutter={[16, 16]} className="home-contend">
       <Col span={24}>
-        <TableUsers
-          columns={columns}
-          dataSource={!loading ? data.users.data : []}
-          loading={loading}
-          title="Lista de Usuarios"
-        />
+        <Title level={3}>Panel de Inicio</Title>
+        <Text>Listas Disponibles</Text>
       </Col>
+      <Divider />
+      {list.map((resp) => {
+        return (
+          <Col span={4} key={resp.key}>
+            <CardListComponent item={resp} />
+          </Col>
+        );
+      })}
     </Row>
   );
 };

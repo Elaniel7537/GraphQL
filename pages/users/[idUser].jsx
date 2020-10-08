@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import Link from "next/link";
 // antd
 import { Card, Row, Typography, Col, Divider, Button, Empty } from "antd";
+// components
+import ButtonComponent from "@atoms/button";
 // graphQL
-import { GET_POST_USER } from "@graphQl/users.jsx";
+import { GET_POST_USER } from "@graphQl/users";
 
 const { Text, Title } = Typography;
 const { Meta } = Card;
@@ -14,10 +15,10 @@ const userPosts = () => {
   const [posts, setPost] = useState([]);
   const [userData, setUserData] = useState(null);
   const router = useRouter();
-  const { id } = router.query;
+  const { idUser } = router.query;
 
   const [getPostUser, { loading }] = useLazyQuery(GET_POST_USER, {
-    variables: { id: id },
+    variables: { id: idUser },
     onCompleted({ user }) {
       setPost(user.posts.data);
       setUserData(user.name);
@@ -26,22 +27,21 @@ const userPosts = () => {
 
   useEffect(() => {
     getPostUser();
-  }, [posts]);
+  }, []);
+
   return (
-    <Row gutter={[16, 16]} className="preview-user-posts">
+    <Row gutter={[16, 16]} className="preview-users">
       <Col span={24} className="header-user-posts">
         <div className="header-item">
-          <div>
-            <Title level={4}>Lista de POSTS</Title>
-          </div>
-          <div>
-            <Text>Usuario: {userData}</Text>
-          </div>
+          <Title level={4}>Lista de POSTS</Title>
+          <Text>{`Usuario ${idUser} : ${userData}`}</Text>
         </div>
         <div className="header-item">
-          <Link href="/">
-            <Button type="primary">Lista de Usuarios</Button>
-          </Link>
+          <ButtonComponent
+            type="primary"
+            title="Lista de Usuarios"
+            path="/users"
+          />
         </div>
       </Col>
       <Divider />
@@ -53,7 +53,6 @@ const userPosts = () => {
             </div>
           ) : posts.length > 0 ? (
             posts.map((resp) => {
-              console.log(resp);
               return (
                 <div className="post-item" key={resp.id}>
                   <Card
@@ -82,11 +81,6 @@ const userPosts = () => {
           )}
         </div>
       </Col>
-      {/* <Col span={24}>
-          <Link href="/">
-            <a>Ir a Home</a>
-          </Link>
-        </Col> */}
     </Row>
   );
 };

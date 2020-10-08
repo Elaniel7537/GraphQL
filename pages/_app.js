@@ -4,7 +4,7 @@ import Head from "next/head";
 // antd
 import { Layout } from "antd";
 // components
-import Menu from "@layouts/sider/menu.jsx";
+import Menu from "@layouts/sider/menu";
 
 import "@styles/self-styles.less";
 
@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     console.log("Hacer peticion Auth");
-  }, []);
+  });
 
   return (
     <>

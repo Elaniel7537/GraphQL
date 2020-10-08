@@ -5,17 +5,17 @@
       "module-resolver",
       {
         "cwd": "babelrc",
-        "root": ["./src"],
-        "extensions": [".js", ".jsx", ".tsx"],
+        "root": ["."],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "alias": {
-          "@": "./src/*",
-          "@styles": "./styles",
-          "@graphQl": "./src/graphql",
-          "@components": "./src/components",
-          "@layouts": "./src/components/layouts",
-          "@atoms": "./src/components/atoms",
-          "@molecules": "./src/components/molecules",
-          "@organisms": "./src/components/organisms"
+          "@/*": "./src/*",
+          "@styles/*": "./styles/*",
+          "@graphQl/*": "./src/graphql/*",
+          "@components/*": "./src/components/*",
+          "@layouts/*": "./src/components/layouts/*",
+          "@atoms/*": "./src/components/atoms/*",
+          "@molecules/*": "./src/components/molecules/*",
+          "@organisms/*": "./src/components/organisms/*"
         }
       }
     ]
