@@ -1,6 +1,32 @@
-DESAFÍO:
+AHORA SE TIENE
 
-DESAFIO 
+.- Manejo de buenas practicas con Atomic Design.  
+.- Conexion con Apollo Client - GraphQL (Dejo como observación que no había trabajado con estas coexciones antes, es buena la experiencia.).  
+.- Listar Usuarios - GraphQL.  
+.- Listar Posts de un usuario seleccionado.  
+.- Webpack Less, escalable por modulos, buenas practicas como flexbox.  
+.- Next js, create-app-next.  
+.- Implementación de Ant Design (muy buen manejador de diseño que se acompla bastante al desarrollar).  
+
+OBSERBACIONES <br/>
+Tengo una consulta con respecto al listar los post, tiene que ver algo con la cache que maneja las conexiones con Apollo Cliente, que al consultar una segunda vez esta no se dispara. <br/>
+
+QUEDA PENDIENTE <br/>
+Actualizar un usuario. <br/>
+
+EXTRA <br/>
+Listar Albunes y traer imagenes <br/>
+
+Comandos de ejecución: <br/>
+
+yarn dev  - modo desarrollo  
+yarn build - empaquetado  
+yarn start - modo servidor  
+
+<br/>
+
+
+DESAFÍO:
 
 
 Este desafío técnico tiene por objetivo conocer cómo escribes código en el contexto de una aplicación react que debe comunicarse con una API GraphQL. Para contarnos lo que sabes, crea una aplicación siguiendo estos lineamientos:
@@ -36,12 +62,3 @@ Permite que la vista de los detalles de la entidad que elegiste sea SEO-friendly
 Si sabes usar hooks, puedes escribir UNO de tus componentes utilizándolos, dejando debidamente documentado que ese es distinto.
 
 Escribe un test unitario para un componente
-
-
-Comandos de ejecución:
-
-yarn dev  - modo desarrollo 
-yarn build - empaquetado 
-yarn start - modo servidor
-
-
