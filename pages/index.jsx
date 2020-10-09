@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // antd
 import { Col, Row, Typography, Divider, Button } from "antd";
 // components
-import CardListComponent from "@molecules/card";
+import CardListComponent from "@atoms/card";
 
 const { Title, Text } = Typography;
 
@@ -14,6 +14,13 @@ const Home = () => {
       cover:
         "https://st2.depositphotos.com/1003434/10630/i/450/depositphotos_106304994-stock-photo-little-girl-outdoors.jpg",
       path: "/users",
+    },
+    {
+      key: "2",
+      title: "Listar Álbunes",
+      cover:
+        "https://st2.depositphotos.com/1003434/10630/i/450/depositphotos_106304994-stock-photo-little-girl-outdoors.jpg",
+      path: "/albums",
     },
   ]);
 

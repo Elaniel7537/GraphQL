@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { Space, Col, Row, Tooltip, Button, Typography, Divider } from "antd";
 import { AppstoreAddOutlined } from "@ant-design/icons";
 // components
-import TableUsers from "@components/molecules/table";
+import TableUsers from "@organisms/table";
 import ButtonComponent from "@atoms/button";
 // graphQL
 import { GET_USERS } from "@graphQl/users";

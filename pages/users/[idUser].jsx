@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 // antd
-import { Card, Row, Typography, Col, Divider, Button, Empty } from "antd";
+import { Card, Row, Typography, Col, Divider, Empty } from "antd";
 // components
 import ButtonComponent from "@atoms/button";
 // graphQL
