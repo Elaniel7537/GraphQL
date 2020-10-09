@@ -33,7 +33,7 @@ const Home = () => {
       <Divider />
       {list.map((resp) => {
         return (
-          <Col span={4} key={resp.key}>
+          <Col xs={24} md={12} lg={6} xl={4} key={resp.key}>
             <CardListComponent item={resp} />
           </Col>
         );
